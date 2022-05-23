@@ -72,7 +72,8 @@ trend_chart <- ggplot(data = race_pop_by_year, aes(x = year, color = group)) +
   labs(x = "Year", y = "Total Prison + Jail Population") +
   scale_color_manual(name = "Race", labels = c("White", "Native", "Latinx", "AAPI", "Black"), 
                      values = c("blue", "green", "purple", "red", "black")) +
-  ggtitle("Change in Prison + Jail Populations of Each Race from 1995 to 2015")
+  ggtitle("Change in Prison + Jail Populations of Each Race from 1995 to 2015") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #Variable Comparison Chart
 white_vs_black_prop <- two_decades_incarceration %>%
@@ -84,7 +85,8 @@ na.omit(white_vs_black_prop)
 var_com_chart <- ggplot(data = white_vs_black_prop[which(white_vs_black_prop$black_prop <= 1 & white_vs_black_prop$white_prop <= 1), ], aes(x = white_prop, y = black_prop)) +
   geom_point(shape = 18) +
   labs(y = "Proportion of Blacks in Prisons + Jails", x = "Proportion of Whites in Prisons + Jails") +
-  ggtitle("Proportion of Blacks in Prisons + Jails vs White in 2015")
+  ggtitle("Proportion of Blacks in Prisons + Jails vs White in 2015") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #Map
 only_2015 <- two_decades_incarceration %>%
@@ -111,7 +113,7 @@ map <- ggplot(county_shape) +
                color = "white",
                size = .1
   ) +
-  coord_map() + # use a map-based coordinate system
+  coord_quickmap() + # use a map-based coordinate system
   scale_fill_viridis_c(option = "magma", direction = -1) +
   labs(fill = "Proportion of Blacks in Prisons + Jails in 2015") +
   #the theme code below was taken from the textbook since we were instructed to 

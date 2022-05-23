@@ -4,24 +4,28 @@ output: html_document
 ---
 
 __Introduction__
-Racism in America has been a long lasting issue that has deep roots in the history of this country. From slavery to the Civil Rights Movement, it has continued to plague this nation in many different aspects of society. The American criminal justice system has undoubtedly been the most vicious manifestation of this racism against minority groups. To investigate the prevalence of racism in the justice system, I will be analyzing the populations and proportions of minority groups like AAPI, Blacks, Natives, and Latinx, in prisons and jails from 1995 to 2015. 
+
+Racism in America has been a long lasting issue that has deep roots in the history of this country. From slavery to the Civil Rights Movement, it has continued to plague this nation in many different aspects of society. However, the American criminal justice system has undoubtedly been the most vicious manifestation of this racism against minority groups. To investigate the prevalence of racism in the justice system, I will be analyzing the populations and proportions of minority groups like AAPI, Blacks, Natives, and Latinx, in prisons and jails from 1995 to 2015. 
 ```{r include = FALSE}
 library(knitr)
 library(ggplot2)
-source("analysisA3.R")
+source("analysis.R")
 ```
 
 __Summary Information__
-To more easily see the comparison between minority vs White population and proportions in prisons and jails, I calculated some values I thought were relevant. Firstly, I calculated the total population of minority groups (19012148) and Whites (12489263) in prisons and jails combined across the country. Then, I calculated the total proportion of minority groups (0.519734) and Whites (0.3414183) in prisons and jails across the nation. These two values showed that the proportion of minority groups was overall higher than that of Whites, a possible result of negative bias toward these groups. Finally, using these values, I identified which regions on the US (Northeast, South, Midwest, West) had the highest and lowest proportion of minority groups and Whites who were detained. The Northeast had the highest proportion of minority groups and lowest proportion of Whites whereas the Midwest had the highest proportion of Whites and the lowest proportion of minority groups. Overall, these calculations tell us that in addition to differences in population and proportion determined by race, these variables are also determined by region, which could potentially be correlated with the political landscape of the US as well. 
+
+To more easily see the comparison between the minority vs White population and proportions in prisons and jails, I calculated some values I thought were relevant. Firstly, I calculated the total population of minority groups (19012148) and Whites (12489263) in prisons and jails combined across the country. Then, I calculated the total proportion of minority groups (0.519734) and Whites (0.3414183) in prisons and jails across the nation. These two values showed that the proportion of minority groups was overall higher than that of Whites, a possible result of negative bias toward these groups. Finally, using these values, I identified which regions on the US (Northeast, South, Midwest, West) had the highest and lowest proportion of minority groups and Whites who were detained. The Northeast had the highest proportion of minority groups and lowest proportion of Whites whereas the Midwest had the highest proportion of Whites and the lowest proportion of minority groups. Overall, these calculations tell us that in addition to differences in population and proportion being determined by *race*, these variables are also determined by region, which could potentially be correlated with the political landscape of the US as well. 
 
 __Trends Chart__
-This chart shows the changes in the population of each racial group (AAPI, Black, Latinx, White, and Native) in prisons and jails combined from 1995 to 2015. I included this chart to see hwo the populations of these groups change to get a better sense of the changing climate surrounding racism in this country. As the chart shows, the population of White, Black, and Latinx individuals gradually increases until about 2015, with the White and Black populations being the highest. Of the four minority groups aforementioned, Blacks have the greatest population for the majority of the two decades. The populations of AAPI individuals and natives was considerably lower, indicating the country's pattern of racism primarily towards Blacks. 
+
+This chart shows the changes in the population of each racial group (AAPI, Black, Latinx, White, and Native) in prisons and jails combined from 1995 to 2015. I included this chart to see how the populations of these groups change to get a better sense of the evolving climate surrounding racism in this country. As the chart shows, the population of White, Black, and Latinx individuals gradually increases until about 2015, with the White and Black populations being the highest. Of the four minority groups aforementioned, Blacks have the greatest population for the majority of the two decades. The populations of AAPI individuals and natives was considerably lower, indicating the country's pattern of racism primarily towards Blacks. 
 
 ```{r echo = FALSE, fig.align = "center"}
 plot(trend_chart)
 ```
 
 __Variable Comparisons Chart__
+
 This chart shows the comparison between the proportion of Blacks in prisons and jails combined vs. that of Whites in 2015. I included this chart to get a better sense of how the criminal justice system differs for Blacks and Whites. As depicted, the proportion of Whites decreases as the proportion of Blacks increases. The fairly strong correlation between the two races shows how there is little impact that other races in prisons and jails have because they are not as prevalent as Whites and Blacks in the criminal justice system. This indicates that the racism towards Black people in America is very strongly aligned with the proportion of them in jails and prisons across the country.
 
 ```{r echo = FALSE, fig.align = "center"}
@@ -29,8 +33,9 @@ plot(var_com_chart)
 ```
 
 __Map__
+
 This map shows the proportion of the Blacks specifically in prisons and jails within each county of the US in 2015. I included this map to focus in on the Black prison and jail proportion and see how exactly geography determines this. According to the map, the highest proportions of Blacks in prisons and jails are predominantly in the southern region of the US while the lowest proportions are in the north and south west. Interestingly, this is fairly consistent with the political landscape considering the fact that the south is generally more conservative compared to the west, which is more progressive. These values are therefore very indicative of the attitudes surrounding racism and Blacks in general in each of these regions.
 
-```{r echo = FALSE, fig.align = "center", fig.width = 10, fig.height = 7}
+```{r echo = FALSE, fig.align = "center", fig.width = 10, fig.height = 4}
 plot(map)
 ```
